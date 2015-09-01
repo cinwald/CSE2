@@ -19,6 +19,6 @@ public class WelcomeClass{
     System.out.println("  v  v  v  v  v  v");
     System.out.println("Prior to this class, my only programming experience was web design over the summer. My website is charlesinwald.com in case you're interested.");
     
-
+//After some research I figured out that backslashes in strings must be doubled to avoid errors
   }
 }
