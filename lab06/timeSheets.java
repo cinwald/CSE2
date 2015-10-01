@@ -14,7 +14,9 @@ public class timeSheets {
     int sheets = 0;
     int total = 0;
     int pay;
+    //The following loop repeats the process for each employee
         while (sheets < empnum) {
+            //retrieves input
             System.out.println("Please enter hourly wages of employee (pay per hour in cents)");
             int wages = myScanner.nextInt();
             System.out.println("Please enter hours worked on Monday:");
@@ -27,8 +29,10 @@ public class timeSheets {
             int thu = myScanner.nextInt();
             System.out.println("Please enter hours worked on Friday:");
             int fri = myScanner.nextInt();
+            //this calculates pay
             pay = (mon + tue + wed + thu + fri) * wages;
             total = total + pay;
+            //increments
             sheets ++;
         }
     System.out.println("The total payroll in cents is:"+total);
