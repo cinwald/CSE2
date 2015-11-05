@@ -10,6 +10,15 @@ public class coinFlip {   //Create Class
     public static void flip(int n) { //Create second flip method 
         int heads = 0; //number of heads
         int tails = 0; //number of tails
+        if (n==0) {
+            flip(1);
+            if (result == 1) {  //if heads...
+                heads++; //increment heads
+            }
+            else {tails++;} //Otherwise increment tails
+        System.out.println("Heads:"+heads+" Tails:"+tails); //Print output
+        }
+        else if (n>0) { 
         for (int i=0;i<n;i++) { //Loops coin toss
             flip(); //runs coin toss
             if (result == 1) {  //if heads...
@@ -18,15 +27,18 @@ public class coinFlip {   //Create Class
             else {tails++;} //Otherwise increment tails
         }
         System.out.println("Heads:"+heads+" Tails:"+tails); //Print output
+        }
+        
     }
 	public static void main(String[] args) { //Main Method
 		 System.out.println("Please enter an integer for amount of flips. O runs once.");
 		 Scanner myScanner = new Scanner(System.in); //declare scanner
 		 int n = myScanner.nextInt();  //user input
-		 if (n>100) { //Failsafe
-		     System.out.println("Error, number too large, now exiting"); //Error message
+		 if (n>100 || n<0) { //Failsafe
+		     System.out.println("Error, invalid number, now exiting"); //Error message
 		     System.exit(n); //Exits program
 		 }
+		 if (n==0) {n++;}
 		 flip();
 		 flip(n);
 	}
